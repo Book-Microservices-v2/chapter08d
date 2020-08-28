@@ -1,8 +1,9 @@
 package microservices.book.gamification.game;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import microservices.book.gamification.game.domain.LeaderBoardRow;
-import org.junit.jupiter.api.BeforeEach;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,18 +14,20 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpServletResponse;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.util.*;
+import microservices.book.gamification.game.domain.LeaderBoardRow;
 
 import static org.assertj.core.api.BDDAssertions.then;
-import static org.mockito.BDDMockito.given;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.mockito.BDDMockito.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
 @ExtendWith(SpringExtension.class)
 @AutoConfigureJsonTesters
 @WebMvcTest(LeaderBoardController.class)
+@TestPropertySource("classpath:/test.properties")
 public class LeaderBoardControllerTest {
 
     @MockBean
