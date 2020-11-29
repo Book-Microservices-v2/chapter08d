@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.3.3.RELEASE</version>
+		<version>2.4.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>microservices.book</groupId>
@@ -15,8 +15,8 @@
 	<description>Logging Service - Learn Microservices with Spring Boot - Book - Chapter 8</description>
 
 	<properties>
-		<java.version>14</java.version>
-		<spring-cloud.version>Hoxton.SR7</spring-cloud.version>
+		<java.version>15</java.version>
+		<spring-cloud.version>2020.0.0-M5</spring-cloud.version>
 	</properties>
 
 	<dependencies>
@@ -84,5 +84,13 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<repositories>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+		</repository>
+	</repositories>
 
 </project>
